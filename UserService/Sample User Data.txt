@@ -1,0 +1,59 @@
+{
+  "name": "Jane Smith",
+  "email": "jane.smith@example.com",
+  "otherData": "Teacher at ABC School"
+}
+
+{
+  "name": "Michael Johnson",
+  "email": "michael.johnson@example.com",
+  "otherData": "Engineer at DEF Ltd."
+}
+
+{
+  "name": "Emily Davis",
+  "email": "emily.davis@example.com",
+  "otherData": "Doctor at GHI Hospital"
+}
+
+{
+  "name": "William Brown",
+  "email": "william.brown@example.com",
+  "otherData": "Lawyer at JKL Firm"
+}
+
+{
+  "name": "Sophia Lee",
+  "email": "sophia.lee@example.com",
+  "otherData": "Accountant at MNO Inc."
+}
+
+{
+  "name": "Olivia Wilson",
+  "email": "olivia.wilson@example.com",
+  "otherData": "Designer at PQR Studio"
+}
+
+{
+  "name": "Alexander Anderson",
+  "email": "alexander.anderson@example.com",
+  "otherData": "Architect at STU Inc."
+}
+
+{
+  "name": "Ava Thomas",
+  "email": "ava.thomas@example.com",
+  "otherData": "Journalist at VWX News"
+}
+
+{
+  "name": "Isabella Martinez",
+  "email": "isabella.martinez@example.com",
+  "otherData": "Artist at YZA Gallery"
+}
+
+{
+  "name": "Ethan Jackson",
+  "email": "ethan.jackson@example.com",
+  "otherData": "Developer at BCD Software"
+}
