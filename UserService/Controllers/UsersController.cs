@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using UserService.Data;
 using UserService.Entities;
+using UserService.Services;
 
 namespace UserService.Controllers
 {
@@ -26,6 +28,15 @@ namespace UserService.Controllers
         {
             _context.User.Add(user);
             await _context.SaveChangesAsync();
+            // data that will be published to the message queue
+            var integrationEventData = JsonConvert.SerializeObject(new
+            {
+                id = user.ID,
+                name = user.Name,
+            });
+            // New user added- will push the event data to message queue
+            PublishMessage.PublishMessageToQueue("user.add", integrationEventData);
+
             return CreatedAtAction("GetUsers", new { id = user.ID }, user);
         }
 
@@ -41,6 +52,15 @@ namespace UserService.Controllers
 
             _context.Entry(user).State = EntityState.Modified;
             await _context.SaveChangesAsync();
+
+            // data that will be published to the message queue
+            var integrationEventData = JsonConvert.SerializeObject(new
+            {
+                id = user.ID,
+                newname = user.Name,
+            });
+            // User update event will push the event data to message queue
+            PublishMessage.PublishMessageToQueue("user.update", integrationEventData);
             return NoContent();
         }
     }
